@@ -1,0 +1,12 @@
+// {{ ansible_managed }}
+
+APT::Periodic::RandomSleep "300";
+APT::Periodic::Enable	"1";
+APT::Periodic::Verbose	"0";
+APT::Periodic::Update-Package-Lists "1";
+APT::Periodic::Download-Upgradeable-Packages "1";
+APT::Periodic::Unattended-Upgrade "0";
+APT::Periodic::AutocleanInterval "7";
+APT::Periodic::MaxAge "31";
+APT::Periodic::MinAge "7";
+APT::Periodic::MaxSize "100";

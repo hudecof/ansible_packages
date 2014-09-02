@@ -1,0 +1,4 @@
+# {{ ansible_managed }}
+
+deb http://ftp.sk.debian.org/debian-backports squeeze-backports main
+deb http://ftp.sk.debian.org/debian-backports squeeze-backports-sloppy main

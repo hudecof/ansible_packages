@@ -1,0 +1,4 @@
+---
+# handlers file for packages
+- include: debian.yml
+- include: redhat.yml

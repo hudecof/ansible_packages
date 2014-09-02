@@ -1,0 +1,15 @@
+# {{ ansible_managed }}
+
+deb http://ftp.sk.debian.org/debian/ squeeze main non-free contrib
+deb-src http://ftp.sk.debian.org/debian/ squeeze main non-free contrib
+
+deb http://security.debian.org/ squeeze/updates main contrib non-free
+deb-src http://security.debian.org/ squeeze/updates main contrib non-free
+
+# squeeze-updates, previously known as 'volatile'
+deb http://ftp.sk.debian.org/debian/ squeeze-updates main contrib non-free
+deb-src http://ftp.sk.debian.org/debian/ squeeze-updates main contrib non-free
+
+# squeeze-lts
+deb http://http.debian.net/debian squeeze-lts main contrib non-free
+deb-src http://http.debian.net/debian squeeze-lts main contrib non-free

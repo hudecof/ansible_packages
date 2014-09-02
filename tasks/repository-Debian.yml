@@ -1,0 +1,31 @@
+---
+- name: "[packages] apt packages"
+  action: apt pkg={{ item }} state=present
+  with_items: packages_pkgs
+  tags: packages
+
+- name: "apt source list files"
+  action: template src={{ item }} dest=/etc/apt/sources.list.d/ owner=root group=root mode=0644
+  with_fileglob:
+    - repository/{{ ansible_lsb.id }}.{{ ansible_lsb.major_release }}/*
+    - repository/{{ ansible_lsb.id }}.{{ ansible_lsb.release }}/*
+  tags: [packages, repository]
+  notify: apt update
+
+- name: "apt keys"
+  action: template src={{ item }} dest=/etc/apt/trusted.gpg.d/ owner=root group=root mode=0644
+  with_fileglob:
+    - files/trusted.gpg.d.{{ ansible_lsb.id }}.{{ ansible_lsb.major_release }}/*
+    - files/trusted.gpg.d.{{ ansible_lsb.id }}.{{ ansible_lsb.release }}/*
+  tags: [packages, repository]
+
+- name: "remove /etc/apt/sources.list"
+  action: file path=/etc/apt/sources.list state=absent
+  tags: [packages, repository]
+  notify: apt update 
+
+- name: "apt config"
+  action: template src={{ item }} dest=/etc/apt/apt.conf.d/ owner=root group=root mode=0644
+  with_fileglob:
+    - config/apt-conf.d.{{ ansible_lsb.id }}/*
+  tags: [packages, repository]
