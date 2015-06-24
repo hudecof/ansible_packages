@@ -3,7 +3,9 @@
 {% if packages_proxy|length %}
 // proxy settings
 Acquire::http::Proxy "{{ packages_proxy }}";
+Acquire::https::proxy "DIRECT";
 {% endif %}
+
 
 // Recommends are as of now still abused in many packages
 APT::Install-Recommends "0";
