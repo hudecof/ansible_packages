@@ -1,0 +1,9 @@
+---
+packages_pkgs:
+  - yum
+  - rpm
+  - sudo
+  - yum-plugin-downloadonly
+  - yum-plugin-priorities
+
+packages_local: []

@@ -1,34 +1,37 @@
 ---
-- name: "[packages] apt packages"
+- name: "debian | packages"
   action: apt pkg={{ item }} state=present
   with_items: packages_pkgs
   tags: packages
 
-- name: "apt source list files"
+- name: "debian | repository"
   action: template src={{ item }} dest=/etc/apt/sources.list.d/ owner=root group=root mode=0644
   with_fileglob:
+    - repository/{{ ansible_distribution }}.{{ ansible_distribution_release }}/*
+    - repository/{{ ansible_distribution }}.{{ ansible_distribution_version }}/*
     - repository/{{ ansible_distribution }}.{{ ansible_distribution_major_version }}/*
-    - repository/{{ ansible_lsb.id }}.{{ ansible_lsb.major_release }}/*
-    - repository/{{ ansible_lsb.id }}.{{ ansible_lsb.release }}/*
   tags: [packages, repository]
   notify: apt update
 
-- name: "apt keys"
+- name: "debian | gpg keys"
   action: template src={{ item }} dest=/etc/apt/trusted.gpg.d/ owner=root group=root mode=0644
   with_fileglob:
-    - files/trusted.gpg.d.{{ ansible_distribution }}.{{ ansible_distribution_major_version }}/*
-    - files/trusted.gpg.d.{{ ansible_lsb.id }}.{{ ansible_lsb.major_release }}/*
-    - files/trusted.gpg.d.{{ ansible_lsb.id }}.{{ ansible_lsb.release }}/*
+    - files/trusted.gpg.d/{{ ansible_distribution }}.{{ ansible_distribution_release }}/*
+    - files/trusted.gpg.d/{{ ansible_distribution }}.{{ ansible_distribution_version }}/*
+    - files/trusted.gpg.d/{{ ansible_distribution }}.{{ ansible_distribution_major_version }}/*
+    - files/trusted.gpg.d/{{ ansible_distribution }}/*
   tags: [packages, repository]
 
-- name: "remove /etc/apt/sources.list"
+- name: "debian | remove sources.list"
   action: file path=/etc/apt/sources.list state=absent
   tags: [packages, repository]
   notify: apt update 
 
-- name: "apt config"
+- name: "debian | apt config"
   action: template src={{ item }} dest=/etc/apt/apt.conf.d/ owner=root group=root mode=0644
   with_fileglob:
-    - config/apt-conf.d.{{ ansible_distribution }}/*
-    - config/apt-conf.d.{{ ansible_lsb.id }}/*
+    - config/apt-conf.d/{{ ansible_distribution }}.{{ ansible_distribution_release }}/*
+    - config/apt-conf.d/{{ ansible_distribution }}.{{ ansible_distribution_version }}/*
+    - config/apt-conf.d/{{ ansible_distribution }}.{{ ansible_distribution_major_version }}/*
+    - config/apt-conf.d/{{ ansible_distribution }}/*
   tags: [packages, repository]

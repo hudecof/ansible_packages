@@ -1,0 +1,10 @@
+---
+packages_pkgs:
+  - yum
+  - rpm
+  - sudo
+  - yum-plugin-downloadonly
+  - yum-plugin-priorities
+
+packages_local:
+  - epel-release-latest-5.noarch.rpm

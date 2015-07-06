@@ -1,0 +1,33 @@
+---
+packages_pkgs:
+  - yum
+  - rpm
+  - sudo
+  - yum-plugin-downloadonly
+  - yum-plugin-priorities
+
+packages_local:
+  -  epel-release-latest-6.noarch.rpm
+
+packages_repo_config:
+  - file: CentOS-Base.repo
+    section: base
+    option: priority
+    value: 1
+  - file: CentOS-Base.repo
+    section: updates
+    option: priority
+    value: 1
+  - file: CentOS-Base.repo
+    section: extras
+    option: priority
+    value: 1
+  - file: CentOS-Base.repo
+    section: centosplus
+    option: priority
+    value: 1
+  - file: epel.repo
+    section: epel
+    option: priority
+    value: 10
+
