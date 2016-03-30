@@ -1,7 +1,7 @@
 ---
 - name: "debian | packages"
   action: apt pkg={{ item }} state=present
-  with_items: packages_pkgs
+  with_items: '{{ packages_pkgs }}'
   tags: packages
 
 - name: "debian | repository"
