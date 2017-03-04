@@ -1,0 +1,33 @@
+---
+
+- name: "debian | remove sources.list"
+  file:
+    path: /etc/apt/sources.list
+    state: absent
+  tags:
+    packages
+    packages::repository
+
+- name: "debian | repository"
+  template:
+    src: repository/{{ repository_item.src }}
+    dest: /etc/apt/sources.list.d/{{ repository_item.dest }}
+    owner: root
+    group: root
+    mode: 0644
+  with_items: "{{ packages_repositories }}"
+  loop_control:
+   loop_var: repository_item
+  tags:
+    packages
+    packages::repository
+  register: repository
+
+- name: "debian | update repository"
+  apt:
+    update_cache: yes
+    cache_valid_time: 1
+  when: repository.changed
+  tags:
+    packages
+    packages::repository

@@ -1,8 +1,7 @@
 ---
 # tasks file for packages
 
-# tasks file for zabbix-agent
-- name: "common | set os specific variables"
+- name: "set os specific variables"
   include_vars: "{{ item }}"
   with_first_found:
    - "os-{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml"
@@ -10,14 +9,11 @@
    - "os-{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
    - "os-{{ ansible_distribution }}.yml"
    - "os-default.yml"
-  tags:
-    - packages
-    - repository
+  tags: packages
 
-# Debian(setup)  specific tasks
-- include: repository-Debian.yml
-  when: ansible_distribution in ('Debian', 'Ubuntu')
-
-# RedHat(setup) specific tasks
-- include: repository-CentOS.yml
-  when: ansible_distribution in ('CentOS', 'RedHat')
+- name: "run os specific tasks"
+  include: "{{ task_item }}"
+  with_items: "{{ packages_tasks }}"
+  loop_control:
+    loop_var: task_item
+  tags: packages

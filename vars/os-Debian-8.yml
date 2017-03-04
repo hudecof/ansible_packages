@@ -1,0 +1,23 @@
+---
+packages_tasks:
+  - debian-config.yml
+  - debian-repositories.yml
+  - debian-packages.yml
+
+packages_repositories:
+  - { src: 'Debian.8/debian.list', dest: 'debian.list' }
+  - { src: 'Debian.8/debian-backports.list', dest: 'debian-backports.list' }
+  - { src: 'Debian.8/debian-updates.list', dest: 'debian-updates.list' }
+
+
+packages_configs:
+  - { src: 'Debian/apt-99local', dest: '99local' }
+  - { src: 'Debian/apt-99periodic', dest: '99periodic' }
+
+packages_pkgs:
+  - apt
+  - aptitude
+  - dpkg
+  - python-apt
+  - sudo
+  - debian-archive-keyring

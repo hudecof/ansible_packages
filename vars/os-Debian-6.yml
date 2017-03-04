@@ -1,0 +1,19 @@
+---
+packages_tasks:
+  - debian-config.yml
+  - debian-repositories.yml
+  - debian-packages.yml
+
+packages_repositories:
+  - { src: 'Debian.6/debian.list', dest: 'debian.list' }
+
+packages_configs:
+  - { src: 'Debian/apt-99local', dest: '99local' }
+
+packages_pkgs:
+  - apt
+  - aptitude
+  - dpkg
+  - python-apt
+  - sudo
+  - debian-archive-keyring

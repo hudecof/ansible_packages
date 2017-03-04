@@ -1,0 +1,7 @@
+# {{ ansible_managed }}
+
+deb http://archive.debian.org/debian squeeze main non-free contrib
+deb-src http://archive.debian.org/debian squeeze main non-free contrib
+
+deb http://archive.debian.org/debian squeeze-lts main contrib non-free
+deb-src http://archive.debian.org/debian squeeze-lts main contrib non-free

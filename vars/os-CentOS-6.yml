@@ -30,4 +30,3 @@ packages_repo_config:
     section: epel
     option: priority
     value: 10
-
