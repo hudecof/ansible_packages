@@ -1,4 +1,0 @@
-# {{ ansible_managed }}
-
-deb http://deb.debian.org/debian wheezy-updates main contrib non-free
-deb-src http://deb.debian.org/debian wheezy-updates main contrib non-free

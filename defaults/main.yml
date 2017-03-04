@@ -2,3 +2,8 @@
 # defaults file for packages
 
 packages_proxy: ''
+
+debian_security: true
+debian_backports: false
+debian_updates: false
+debian_source: false

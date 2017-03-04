@@ -5,9 +5,8 @@ packages_tasks:
   - debian-packages.yml
 
 packages_repositories:
-  - { src: 'Debian.8/debian.list', dest: 'debian.list' }
-  - { src: 'Debian.8/debian-backports.list', dest: 'debian-backports.list' }
-  - { src: 'Debian.8/debian-updates.list', dest: 'debian-updates.list' }
+  - { src: 'debian-8.list', dest: 'debian.list' }
+
 
 
 packages_configs:

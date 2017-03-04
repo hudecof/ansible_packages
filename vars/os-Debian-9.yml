@@ -5,10 +5,7 @@ packages_tasks:
   - debian-packages.yml
 
 packages_repositories:
-  - { src: 'Debian.9/debian.list', dest: 'debian.list' }
-  - { src: 'Debian.9/debian-backports.list', dest: 'debian-backports.list' }
-  - { src: 'Debian.9/debian-updates.list', dest: 'debian-updates.list' }
-
+  - { src: 'debian-9.list', dest: 'debian.list' }
 
 packages_configs:
   - { src: 'Debian/apt-99local', dest: '99local' }

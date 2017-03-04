@@ -1,7 +1,0 @@
-# {{ ansible_managed }}
-
-deb http://deb.debian.org/debian stretch main non-free contrib
-deb-src http://deb.debian.org/debian stretch main non-free contrib
-
-deb http://deb.debian.org/debian-security stretch/updates main contrib non-free
-deb-src http://deb.debian.org/debian-security stretch/updates main contrib non-free

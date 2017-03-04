@@ -1,4 +1,0 @@
-# {{ ansible_managed }}
-
-deb http://ftp.debian.sk/debian/ wheezy-backports main contrib non-free
-deb http://ftp.debian.sk/debian/ wheezy-backports-sloppy main contrib non-free

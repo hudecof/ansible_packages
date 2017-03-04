@@ -1,3 +1,0 @@
-# {{ ansible_managed }}
-
-deb http://ftp.debian.sk/debian/ stretch-backports main contrib non-free
