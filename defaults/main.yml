@@ -7,3 +7,10 @@ debian_security: true
 debian_backports: false
 debian_updates: false
 debian_source: false
+
+ubuntu_security: true
+ubuntu_updates: true
+ubuntu_multiverse: false
+ubuntu_universe: false
+ubuntu_backports: false
+ubuntu_proposed: false
