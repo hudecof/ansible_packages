@@ -1,0 +1,22 @@
+# {{ ansible_managed }}
+
+deb http://deb.debian.org/debian jessie main non-free contrib
+deb-src http://deb.debian.org/debian jessie main non-free contrib
+
+{% if packages_debian_security %}
+# Debian Security Updates
+deb http://deb.debian.org/debian-security jessie/updates main contrib non-free
+deb-src http://deb.debian.org/debian-security jessie/updates main contrib non-free
+{% endif %}
+
+{% if packages_debian_backports %}
+# Debian Backports
+deb http://ftp.debian.sk/debian/ jessie-backports main contrib non-free
+deb http://ftp.debian.sk/debian/ jessie-backports-sloppy main contrib non-free
+{% endif %}
+
+{% if packages_debian_updates %}
+# Debian updates
+deb http://deb.debian.org/debian jessie-updates main contrib non-free
+deb-src http://deb.debian.org/debian jessie-updates main contrib non-free
+{% endif %}

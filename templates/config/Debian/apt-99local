@@ -1,6 +1,6 @@
 // {{ ansible_managed }}
 
-{% if packages_proxy|length %}
+{% if packages_proxy %}
 // proxy settings
 Acquire::http::Proxy "{{ packages_proxy }}";
 Acquire::https::proxy "DIRECT";

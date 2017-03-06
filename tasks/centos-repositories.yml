@@ -1,0 +1,10 @@
+---
+
+- name: "centos | epel"
+  yum:
+    name: "{{ packages_epel_rpm }}"
+    state: present
+  when: packages_centos_epel
+  tags:
+    packages
+    packages::repository

@@ -1,0 +1,23 @@
+# {{ ansible_managed }}
+
+deb http://deb.debian.org/debian stretch main non-free contrib
+deb-src http://deb.debian.org/debian stretch main non-free contrib
+
+{% if packages_debian_security %}
+# Debian Security Updates
+deb http://deb.debian.org/debian-security stretch/updates main contrib non-free
+deb-src http://deb.debian.org/debian-security stretch/updates main contrib non-free
+{% endif %}
+
+{% if packages_debian_backports %}
+# Debian Backports
+deb http://ftp.debian.sk/debian/ stretch-backports main contrib non-free
+deb-src http://ftp.debian.sk/debian/ stretch-backports main contrib non-free
+{% endif %}
+
+
+{% if packages_debian_updates %}
+# Debian updates
+deb http://deb.debian.org/debian stretch-updates main contrib non-free
+deb-src http://deb.debian.org/debian stretch-updates main contrib non-free
+{% endif %}

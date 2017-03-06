@@ -1,0 +1,9 @@
+# {{ ansible_managed }}
+
+deb http://archive.debian.org/debian squeeze main non-free contrib
+deb-src http://archive.debian.org/debian squeeze main non-free contrib
+
+{% if packages_debian_security %}
+deb http://archive.debian.org/debian squeeze-lts main contrib non-free
+deb-src http://archive.debian.org/debian squeeze-lts main contrib non-free
+{% endif %}

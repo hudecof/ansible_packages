@@ -1,7 +1,0 @@
----
-packages_pkgs:
-  - apt
-  - dpkg
-  - python-apt
-  - sudo
-  - debian-archive-keyring
