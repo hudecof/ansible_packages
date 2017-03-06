@@ -1,7 +1,7 @@
 # Packages
 
 - **CNC**: [![build status](https://source.cnc.sk/ansible/role-packages/badges/master/build.svg)](https://source.cnc.sk/ansible/role-packages/commits/master)
-- **Github**:
+- **Github**: [![Build Status](https://travis-ci.org/hudecof/ansible_packages.svg?branch=master)](https://travis-ci.org/hudecof/ansible_packages)
 
 Basic setup of the distribution specific package repositories.
 
