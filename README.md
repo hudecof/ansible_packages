@@ -1,5 +1,8 @@
 # Packages
 
+- **CNC**: [![build status](https://source.cnc.sk/ansible/role-packages/badges/master/build.svg)](https://source.cnc.sk/ansible/role-packages/commits/master)
+- **Github**:
+
 Basic setup of the distribution specific package repositories.
 
 ## Requirements
