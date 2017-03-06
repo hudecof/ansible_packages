@@ -1,0 +1,43 @@
+---
+- name: "centos | config plugins"
+  ini_file:
+    dest: /etc/yum.conf
+    section: main
+    option: plugins
+    value: 1
+  tags:
+    packages
+    packages::config
+
+- name: "centos | config proxy"
+  ini_file:
+    dest: /etc/yum.conf
+    section: main
+    option: proxy
+    value: "{{ packages_proxy }}"
+  when: packages_proxy
+  tags:
+    packages
+    packages::config
+
+- name: "centos | config proxy_username"
+  ini_file:
+    dest: /etc/yum.conf
+    section: main
+    option: proxy_username
+    value: "{{ packages_proxy_username }}"
+  when: packages_proxy_username
+  tags:
+    packages
+    packages::config
+
+- name: "centos | config proxy_password"
+  ini_file:
+    dest: /etc/yum.conf
+    section: main
+    option: proxy_username
+    value: "{{ packages_proxy_password }}"
+  when: packages_proxy_password
+  tags:
+    packages
+    packages::config

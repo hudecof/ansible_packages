@@ -1,16 +1,21 @@
 ---
 # defaults file for packages
 
-packages_proxy: ''
+packages_proxy: null
+packages_proxy_username: null
+packages_proxy_password: null
 
-debian_security: true
-debian_backports: false
-debian_updates: false
-debian_source: false
 
-ubuntu_security: true
-ubuntu_updates: true
-ubuntu_multiverse: false
-ubuntu_universe: false
-ubuntu_backports: false
-ubuntu_proposed: false
+packages_debian_security: true
+packages_debian_backports: false
+packages_debian_updates: false
+packages_debian_source: false
+
+packages_ubuntu_security: true
+packages_ubuntu_updates: true
+packages_ubuntu_multiverse: false
+packages_ubuntu_universe: false
+packages_ubuntu_backports: false
+packages_ubuntu_proposed: false
+
+packages_centos_epel: true
