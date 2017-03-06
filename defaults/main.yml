@@ -9,7 +9,6 @@ packages_proxy_password: null
 packages_debian_security: true
 packages_debian_backports: false
 packages_debian_updates: false
-packages_debian_source: false
 
 packages_ubuntu_security: true
 packages_ubuntu_updates: true
@@ -18,4 +17,4 @@ packages_ubuntu_universe: false
 packages_ubuntu_backports: false
 packages_ubuntu_proposed: false
 
-packages_centos_epel: true
+packages_centos_epel: false

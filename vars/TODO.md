@@ -1,2 +1,0 @@
-- for Debian/Ubuntu add support for proxy username/password
-- add support for custom repositories
