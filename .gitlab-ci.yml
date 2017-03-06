@@ -11,3 +11,4 @@ test:
   script:
     - cd ../ && mv  role-packages hudecof.packages && cd hudecof.packages
     - molecule test
+    - cd ../ && mv  hudecof.packages role-packages && cd role-packages
