@@ -15,7 +15,7 @@
     section: main
     option: proxy
     value: "{{ packages_proxy }}"
-  when: packages_proxy
+  when: packages_proxy is defined
   tags:
     packages
     packages::config
@@ -26,7 +26,7 @@
     section: main
     option: proxy_username
     value: "{{ packages_proxy_username }}"
-  when: packages_proxy_username
+  when: packages_proxy_username is defined
   tags:
     packages
     packages::config
@@ -37,7 +37,7 @@
     section: main
     option: proxy_username
     value: "{{ packages_proxy_password }}"
-  when: packages_proxy_password
+  when: packages_proxy_password is defined
   tags:
     packages
     packages::config

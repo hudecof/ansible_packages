@@ -11,4 +11,4 @@ packages_pkgs:
   - yum-plugin-fastestmirror
 
 packages_epel_rpm:
-  - https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+  - epel-release
