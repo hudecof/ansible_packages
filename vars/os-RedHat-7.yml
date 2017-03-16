@@ -1,0 +1,15 @@
+---
+
+packages_tasks:
+  - centos-config.yml
+  - centos-repositories.yml
+  - centos-packages.yml
+
+packages_pkgs:
+  - yum
+  - rpm
+  - sudo
+  - libselinux-python
+
+packages_epel_rpm:
+  - https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
