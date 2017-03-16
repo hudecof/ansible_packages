@@ -10,6 +10,7 @@ packages_pkgs:
   - rpm
   - sudo
   - yum-plugin-fastestmirror
+  - libselinux-python
 
 packages_epel_rpm:
   - epel-release
