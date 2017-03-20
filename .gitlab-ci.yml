@@ -9,6 +9,6 @@ before_script:
 
 test:
   script:
-    - cd ../ && mv  role-packages hudecof.packages && cd hudecof.packages
+    - cd ../ && rm -rf hudecof.packages && mv  role-packages hudecof.packages && cd hudecof.packages
     - molecule test
     - cd ../ && mv  hudecof.packages role-packages && cd role-packages
