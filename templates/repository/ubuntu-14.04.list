@@ -1,4 +1,4 @@
-{{ asnsible_managed | comment }}
+{{ ansible_managed | comment }}
 
 ## Ubuntu Base
 deb http://archive.ubuntu.com/ubuntu/ trusty main restricted
