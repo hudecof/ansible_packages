@@ -1,4 +1,4 @@
-# {{ ansible_managed }}
+{{ ansible_managed | comment }}
 
 deb http://archive.debian.org/debian squeeze main non-free contrib
 deb-src http://archive.debian.org/debian squeeze main non-free contrib

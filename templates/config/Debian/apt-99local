@@ -1,4 +1,4 @@
-// {{ ansible_managed }}
+{{ ansible_managed | comment('c') }}
 
 {% if packages_proxy %}
 // proxy settings

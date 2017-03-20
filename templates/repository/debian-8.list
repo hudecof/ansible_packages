@@ -1,4 +1,4 @@
-# {{ ansible_managed }}
+{{ ansible_managed | comment }}
 
 deb http://deb.debian.org/debian jessie main non-free contrib
 deb-src http://deb.debian.org/debian jessie main non-free contrib

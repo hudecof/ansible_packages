@@ -1,4 +1,4 @@
-// {{ ansible_managed }}
+{{ ansible_managed | comment('c') }}
 
 APT::Periodic::RandomSleep "300";
 APT::Periodic::Enable	"1";
