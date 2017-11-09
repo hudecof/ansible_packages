@@ -1,3 +1,4 @@
 ---
- - name: apt update
-   action: apt update_cache=yes
+- name: apt update
+  apt:
+    update_cache: yes

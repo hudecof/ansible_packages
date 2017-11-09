@@ -4,9 +4,6 @@
   file:
     path: /etc/apt/sources.list
     state: absent
-  tags:
-    packages
-    packages::repository
 
 - name: "debian | repository"
   template:
@@ -17,10 +14,7 @@
     mode: 0644
   with_items: "{{ packages_repositories }}"
   loop_control:
-   loop_var: repository_item
-  tags:
-    packages
-    packages::repository
+    loop_var: repository_item
   register: repository
 
 - name: "debian | update repository"
@@ -28,6 +22,3 @@
     update_cache: yes
     cache_valid_time: 1
   when: repository.changed
-  tags:
-    packages
-    packages::repository

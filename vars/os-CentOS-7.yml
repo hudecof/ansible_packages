@@ -1,16 +1,10 @@
 ---
-
-packages_tasks:
-  - centos-config.yml
-  - centos-repositories.yml
-  - centos-packages.yml
-
 packages_pkgs:
-  - yum
-  - rpm
-  - sudo
-  - yum-plugin-fastestmirror
-  - libselinux-python
+  - {'name': 'yum', 'state': 'present'}
+  - {'name': 'rpm', 'state': 'present'}
+  - {'name': 'sudo', 'state': 'present'}
+  - {'name': 'yum-plugin-fastestmirror', 'state': 'present'}
+  - {'name': 'libselinux-python', 'state': 'present'}
 
 packages_epel_rpm:
   - epel-release

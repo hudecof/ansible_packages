@@ -1,43 +1,31 @@
 ---
-- name: "centos | config plugins"
+- name: "config plugins (redhat)"
   ini_file:
     dest: /etc/yum.conf
     section: main
     option: plugins
     value: 1
-  tags:
-    packages
-    packages::config
 
-- name: "centos | config proxy"
+- name: "config proxy (redhat)"
   ini_file:
     dest: /etc/yum.conf
     section: main
     option: proxy
     value: "{{ packages_proxy }}"
   when: not packages_proxy is none
-  tags:
-    packages
-    packages::config
 
-- name: "centos | config proxy_username"
+- name: "config proxy_username (redhat)"
   ini_file:
     dest: /etc/yum.conf
     section: main
     option: proxy_username
     value: "{{ packages_proxy_username }}"
   when: not packages_proxy_username is none
-  tags:
-    packages
-    packages::config
 
-- name: "centos | config proxy_password"
+- name: "config proxy_password (redhat)"
   ini_file:
     dest: /etc/yum.conf
     section: main
     option: proxy_password
     value: "{{ packages_proxy_password }}"
   when: not packages_proxy_password is none
-  tags:
-    packages
-    packages::config

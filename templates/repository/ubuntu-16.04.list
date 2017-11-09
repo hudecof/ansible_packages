@@ -25,53 +25,77 @@ deb-src http://archive.ubuntu.com/ubuntu/ xenial-proposed main restricted
 {% endif %}
 
 {% if packages_ubuntu_universe %}
+
 ## Ubuntu Universe
 deb http://archive.ubuntu.com/ubuntu/ xenial universe
 deb-src http://archive.ubuntu.com/ubuntu/ xenial universe
-  {% if packages_ubuntu_updates %}
+  {%- if packages_ubuntu_updates %}
+
 ## Ubuntu Universe: Updates
 deb http://archive.ubuntu.com/ubuntu/ xenial-updates universe
 deb-src http://archive.ubuntu.com/ubuntu/ xenial-updates universe
-  {% endif %}
-  {% if packages_ubuntu_security %}
+  {%- endif %}
+  {%- if packages_ubuntu_security %}
+
 ## Ubuntu Universe: Security
 deb http://archive.ubuntu.com/ubuntu/ xenial-security universe
 deb-src http://archive.ubuntu.com/ubuntu/ xenial-security universe
-  {% endif %}
-  {% if packages_ubuntu_backports %}
-  ## Ubuntu Universe: backports
+  {%- endif %}
+  {%- if packages_ubuntu_backports %}
+
+## Ubuntu Universe: backports
 deb http://archive.ubuntu.com/ubuntu/ xenial-backports universe
 deb-src http://archive.ubuntu.com/ubuntu/ xenial-backports universe
-  {% endif %}
-  {% if packages_ubuntu_proposed %}
+  {%- endif %}
+  {%- if packages_ubuntu_proposed %}
+
 ## Ubuntu Universe: Proposed Updates
 deb http://archive.ubuntu.com/ubuntu/ xenial-proposed universe
 deb-src http://archive.ubuntu.com/ubuntu/ xenial-proposed universe
-  {% endif %}
+  {%- endif %}
 {% endif %}
 
 {% if packages_ubuntu_multiverse %}
+
 ## Ubuntu Multiverse
 deb http://archive.ubuntu.com/ubuntu/ xenial multiverse
 deb-src http://archive.ubuntu.com/ubuntu/ xenial multiverse
-  {% if packages_ubuntu_updates %}
+  {%- if packages_ubuntu_updates %}
+
 ## Ubuntu Multiverse: Updates
 deb http://archive.ubuntu.com/ubuntu/ xenial-updates multiverse
 deb-src http://archive.ubuntu.com/ubuntu/ xenial-updates multiverse
-  {% endif %}
-  {% if packages_ubuntu_security %}
+  {%- endif %}
+  {%- if packages_ubuntu_security %}
+
 ## Ubuntu Multiverse: Security
 deb http://archive.ubuntu.com/ubuntu/ xenial-security multiverse
 deb-src http://archive.ubuntu.com/ubuntu/ xenial-security multiverse
-  {% endif %}
-  {% if packages_ubuntu_backports %}
-  ## Ubuntu Multiverse: backports
+  {%- endif %}
+  {%- if packages_ubuntu_backports %}
+
+## Ubuntu Multiverse: backports
 deb http://archive.ubuntu.com/ubuntu/ xenial-backports multiverse
 deb-src http://archive.ubuntu.com/ubuntu/ xenial-backports multiverse
-  {% endif %}
-  {% if packages_ubuntu_proposed %}
+  {%- endif %}
+  {%- if packages_ubuntu_proposed %}
+
 ## Ubuntu Multiverse: Proposed Updates
 deb http://archive.ubuntu.com/ubuntu/ xenial-proposed multiverse
 deb-src http://archive.ubuntu.com/ubuntu/ xenial-proposed multiverse
-  {% endif %}
+  {%- endif %}
+{% endif %}
+
+
+
+{% if packages_ubuntu_partner %}
+## Ubuntu Partner
+deb http://archive.canonical.com/ubuntu xenial partner
+deb-src http://archive.canonical.com/ubuntu xenial partner
+{% endif %}
+
+{% if packages_ubuntu_extra %}
+## Ubuntu Extra
+deb http://extras.ubuntu.com/ubuntu xenial main
+deb-src http://extras.ubuntu.com/ubuntu xenial main
 {% endif %}

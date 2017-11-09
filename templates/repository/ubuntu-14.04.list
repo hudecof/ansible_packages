@@ -75,3 +75,16 @@ deb http://archive.ubuntu.com/ubuntu/ trusty-proposed multiverse
 deb-src http://archive.ubuntu.com/ubuntu/ trusty-proposed multiverse
   {% endif %}
 {% endif %}
+
+
+{% if packages_ubuntu_partner %}
+## Ubuntu Partner
+deb http://archive.canonical.com/ubuntu trusty partner
+deb-src http://archive.canonical.com/ubuntu trusty partner
+{% endif %}
+
+{% if packages_ubuntu_extra %}
+## Ubuntu Extra
+deb http://extras.ubuntu.com/ubuntu trusty main
+deb-src http://extras.ubuntu.com/ubuntu trusty main
+{% endif %}
