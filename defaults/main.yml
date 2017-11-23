@@ -11,8 +11,8 @@ packages_debian_updates: false
 
 packages_ubuntu_security: true
 packages_ubuntu_updates: true
-packages_ubuntu_multiverse: false
-packages_ubuntu_universe: false
+packages_ubuntu_multiverse: true
+packages_ubuntu_universe: true
 packages_ubuntu_backports: false
 packages_ubuntu_proposed: false
 packages_ubuntu_partner: false
