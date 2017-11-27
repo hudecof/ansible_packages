@@ -3,6 +3,9 @@
 deb http://deb.debian.org/debian jessie main non-free contrib
 deb-src http://deb.debian.org/debian jessie main non-free contrib
 
+deb http://deb.debian.org/debian jessie-updates main non-free contrib
+deb-src http://deb.debian.org/debian jessie-updates main non-free contrib
+
 {% if packages_debian_security %}
 # Debian Security Updates
 deb http://deb.debian.org/debian-security jessie/updates main contrib non-free
