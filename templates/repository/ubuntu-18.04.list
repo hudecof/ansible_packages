@@ -1,0 +1,101 @@
+{{ ansible_managed | comment }}
+
+## Ubuntu Base
+deb http://archive.ubuntu.com/ubuntu/ bionic main restricted
+deb-src http://archive.ubuntu.com/ubuntu/ bionic main restricted
+{% if packages_ubuntu_updates %}
+## Ubuntu Base: Updates
+deb http://archive.ubuntu.com/ubuntu/ bionic-updates main restricted
+deb-src http://archive.ubuntu.com/ubuntu/ bionic-updates main restricted
+{% endif %}
+{% if packages_ubuntu_security %}
+## Ubuntu Base: Security
+deb http://archive.ubuntu.com/ubuntu/ bionic-security main restricted
+deb-src http://archive.ubuntu.com/ubuntu/ bionic-security main restricted
+{% endif %}
+{% if packages_ubuntu_backports %}
+## Ubuntu Base: backports
+deb http://archive.ubuntu.com/ubuntu/ bionic-backports main restricted
+deb-src http://archive.ubuntu.com/ubuntu/ bionic-backports main restricted
+{% endif %}
+{% if packages_ubuntu_proposed %}
+## Ubuntu Base: Proposed Updates
+deb http://archive.ubuntu.com/ubuntu/ bionic-proposed main restricted
+deb-src http://archive.ubuntu.com/ubuntu/ bionic-proposed main restricted
+{% endif %}
+
+{% if packages_ubuntu_universe %}
+
+## Ubuntu Universe
+deb http://archive.ubuntu.com/ubuntu/ bionic universe
+deb-src http://archive.ubuntu.com/ubuntu/ bionic universe
+  {%- if packages_ubuntu_updates %}
+
+## Ubuntu Universe: Updates
+deb http://archive.ubuntu.com/ubuntu/ bionic-updates universe
+deb-src http://archive.ubuntu.com/ubuntu/ bionic-updates universe
+  {%- endif %}
+  {%- if packages_ubuntu_security %}
+
+## Ubuntu Universe: Security
+deb http://archive.ubuntu.com/ubuntu/ bionic-security universe
+deb-src http://archive.ubuntu.com/ubuntu/ bionic-security universe
+  {%- endif %}
+  {%- if packages_ubuntu_backports %}
+
+## Ubuntu Universe: backports
+deb http://archive.ubuntu.com/ubuntu/ bionic-backports universe
+deb-src http://archive.ubuntu.com/ubuntu/ bionic-backports universe
+  {%- endif %}
+  {%- if packages_ubuntu_proposed %}
+
+## Ubuntu Universe: Proposed Updates
+deb http://archive.ubuntu.com/ubuntu/ bionic-proposed universe
+deb-src http://archive.ubuntu.com/ubuntu/ bionic-proposed universe
+  {%- endif %}
+{% endif %}
+
+{% if packages_ubuntu_multiverse %}
+
+## Ubuntu Multiverse
+deb http://archive.ubuntu.com/ubuntu/ bionic multiverse
+deb-src http://archive.ubuntu.com/ubuntu/ bionic multiverse
+  {%- if packages_ubuntu_updates %}
+
+## Ubuntu Multiverse: Updates
+deb http://archive.ubuntu.com/ubuntu/ bionic-updates multiverse
+deb-src http://archive.ubuntu.com/ubuntu/ bionic-updates multiverse
+  {%- endif %}
+  {%- if packages_ubuntu_security %}
+
+## Ubuntu Multiverse: Security
+deb http://archive.ubuntu.com/ubuntu/ bionic-security multiverse
+deb-src http://archive.ubuntu.com/ubuntu/ bionic-security multiverse
+  {%- endif %}
+  {%- if packages_ubuntu_backports %}
+
+## Ubuntu Multiverse: backports
+deb http://archive.ubuntu.com/ubuntu/ bionic-backports multiverse
+deb-src http://archive.ubuntu.com/ubuntu/ bionic-backports multiverse
+  {%- endif %}
+  {%- if packages_ubuntu_proposed %}
+
+## Ubuntu Multiverse: Proposed Updates
+deb http://archive.ubuntu.com/ubuntu/ bionic-proposed multiverse
+deb-src http://archive.ubuntu.com/ubuntu/ bionic-proposed multiverse
+  {%- endif %}
+{% endif %}
+
+
+
+{% if packages_ubuntu_partner %}
+## Ubuntu Partner
+deb http://archive.canonical.com/ubuntu bionic partner
+deb-src http://archive.canonical.com/ubuntu bionic partner
+{% endif %}
+
+{% if packages_ubuntu_extra %}
+## Ubuntu Extra
+deb http://extras.ubuntu.com/ubuntu bionic main
+deb-src http://extras.ubuntu.com/ubuntu bionic main
+{% endif %}
