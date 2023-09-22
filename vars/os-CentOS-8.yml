@@ -1,0 +1,10 @@
+---
+packages_pkgs:
+  - {'name': 'yum', 'state': 'present'}
+  - {'name': 'rpm', 'state': 'present'}
+  - {'name': 'sudo', 'state': 'present'}
+  - {'name': 'yum-plugin-fastestmirror', 'state': 'present'}
+  - {'name': 'libselinux-python', 'state': 'present'}
+
+packages_epel_rpm:
+  - epel-release

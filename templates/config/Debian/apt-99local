@@ -3,7 +3,7 @@
 {% if packages_proxy %}
 // proxy settings
 Acquire::http::Proxy "{{ packages_proxy }}";
-Acquire::https::proxy "DIRECT";
+Acquire::https::proxy "{{ packages_proxy }}";
 {% endif %}
 
 

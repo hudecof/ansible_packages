@@ -3,8 +3,16 @@
 deb http://archive.debian.org/debian squeeze main non-free contrib
 deb-src http://archive.debian.org/debian squeeze main non-free contrib
 
+
 {% if packages_debian_security %}
-# release file expired
-#deb http://archive.debian.org/debian squeeze-lts main contrib non-free
-#deb-src http://archive.debian.org/debian squeeze-lts main contrib non-free
+# Debian Security Updates
+deb http://archive.debian.org/debian-security squeeze/updates main contrib non-free
+deb-src http://archive.debian.org/debian-security  squeeze/updates main contrib non-free
+{% endif %}
+
+
+{% if packages_debian_backports %}
+# Debian Backports
+deb http://archive.debian.org/debian squeeze-backports main non-free contrib
+deb-src http://archive.debian.org/debian squeeze-backports main non-free contrib
 {% endif %}

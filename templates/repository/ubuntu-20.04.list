@@ -1,0 +1,101 @@
+{{ ansible_managed | comment }}
+
+## Ubuntu Base
+deb http://archive.ubuntu.com/ubuntu/ focal main restricted
+deb-src http://archive.ubuntu.com/ubuntu/ focal main restricted
+{% if packages_ubuntu_updates %}
+## Ubuntu Base: Updates
+deb http://archive.ubuntu.com/ubuntu/ focal-updates main restricted
+deb-src http://archive.ubuntu.com/ubuntu/ focal-updates main restricted
+{% endif %}
+{% if packages_ubuntu_security %}
+## Ubuntu Base: Security
+deb http://archive.ubuntu.com/ubuntu/ focal-security main restricted
+deb-src http://archive.ubuntu.com/ubuntu/ focal-security main restricted
+{% endif %}
+{% if packages_ubuntu_backports %}
+## Ubuntu Base: backports
+deb http://archive.ubuntu.com/ubuntu/ focal-backports main restricted
+deb-src http://archive.ubuntu.com/ubuntu/ focal-backports main restricted
+{% endif %}
+{% if packages_ubuntu_proposed %}
+## Ubuntu Base: Proposed Updates
+deb http://archive.ubuntu.com/ubuntu/ focal-proposed main restricted
+deb-src http://archive.ubuntu.com/ubuntu/ focal-proposed main restricted
+{% endif %}
+
+{% if packages_ubuntu_universe %}
+
+## Ubuntu Universe
+deb http://archive.ubuntu.com/ubuntu/ focal universe
+deb-src http://archive.ubuntu.com/ubuntu/ focal universe
+  {%- if packages_ubuntu_updates %}
+
+## Ubuntu Universe: Updates
+deb http://archive.ubuntu.com/ubuntu/ focal-updates universe
+deb-src http://archive.ubuntu.com/ubuntu/ focal-updates universe
+  {%- endif %}
+  {%- if packages_ubuntu_security %}
+
+## Ubuntu Universe: Security
+deb http://archive.ubuntu.com/ubuntu/ focal-security universe
+deb-src http://archive.ubuntu.com/ubuntu/ focal-security universe
+  {%- endif %}
+  {%- if packages_ubuntu_backports %}
+
+## Ubuntu Universe: backports
+deb http://archive.ubuntu.com/ubuntu/ focal-backports universe
+deb-src http://archive.ubuntu.com/ubuntu/ focal-backports universe
+  {%- endif %}
+  {%- if packages_ubuntu_proposed %}
+
+## Ubuntu Universe: Proposed Updates
+deb http://archive.ubuntu.com/ubuntu/ focal-proposed universe
+deb-src http://archive.ubuntu.com/ubuntu/ focal-proposed universe
+  {%- endif %}
+{% endif %}
+
+{% if packages_ubuntu_multiverse %}
+
+## Ubuntu Multiverse
+deb http://archive.ubuntu.com/ubuntu/ focal multiverse
+deb-src http://archive.ubuntu.com/ubuntu/ focal multiverse
+  {%- if packages_ubuntu_updates %}
+
+## Ubuntu Multiverse: Updates
+deb http://archive.ubuntu.com/ubuntu/ focal-updates multiverse
+deb-src http://archive.ubuntu.com/ubuntu/ focal-updates multiverse
+  {%- endif %}
+  {%- if packages_ubuntu_security %}
+
+## Ubuntu Multiverse: Security
+deb http://archive.ubuntu.com/ubuntu/ focal-security multiverse
+deb-src http://archive.ubuntu.com/ubuntu/ focal-security multiverse
+  {%- endif %}
+  {%- if packages_ubuntu_backports %}
+
+## Ubuntu Multiverse: backports
+deb http://archive.ubuntu.com/ubuntu/ focal-backports multiverse
+deb-src http://archive.ubuntu.com/ubuntu/ focal-backports multiverse
+  {%- endif %}
+  {%- if packages_ubuntu_proposed %}
+
+## Ubuntu Multiverse: Proposed Updates
+deb http://archive.ubuntu.com/ubuntu/ focal-proposed multiverse
+deb-src http://archive.ubuntu.com/ubuntu/ focal-proposed multiverse
+  {%- endif %}
+{% endif %}
+
+
+
+{% if packages_ubuntu_partner %}
+## Ubuntu Partner
+deb http://archive.canonical.com/ubuntu focal partner
+deb-src http://archive.canonical.com/ubuntu focal partner
+{% endif %}
+
+{% if packages_ubuntu_extra %}
+## Ubuntu Extra
+deb http://extras.ubuntu.com/ubuntu focal main
+deb-src http://extras.ubuntu.com/ubuntu focal main
+{% endif %}

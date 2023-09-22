@@ -1,26 +1,18 @@
 {{ ansible_managed | comment }}
 
-# Debian
-deb http://deb.debian.org/debian wheezy main non-free contrib
-deb-src http://deb.debian.org/debian wheezy main non-free contrib
+deb http://archive.debian.org/debian wheezy main non-free contrib
+deb-src http://archive.debian.org/debian wheezy main non-free contrib
 
-deb http://deb.debian.org/debian wheezy-updates main non-free contrib
-deb-src http://deb.debian.org/debian wheezy-updates main non-free contrib
 
 {% if packages_debian_security %}
 # Debian Security Updates
-deb http://deb.debian.org/debian-security wheezy/updates main contrib non-free
-deb-src http://deb.debian.org/debian-security wheezy/updates main contrib non-free
+deb http://archive.debian.org/debian-security wheezy/updates main contrib non-free
+deb-src http://archive.debian.org/debian-security  wheezy/updates main contrib non-free
 {% endif %}
+
 
 {% if packages_debian_backports %}
 # Debian Backports
-deb http://ftp.debian.sk/debian/ wheezy-backports main contrib non-free
-deb http://ftp.debian.sk/debian/ wheezy-backports-sloppy main contrib non-free
-{% endif %}
-
-{% if packages_debian_updates %}
-# Debian updates
-deb http://deb.debian.org/debian wheezy-updates main contrib non-free
-deb-src http://deb.debian.org/debian wheezy-updates main contrib non-free
+deb http://archive.debian.org/debian wheezy-backports main non-free contrib
+deb-src http://archive.debian.org/debian wheezy-backports main non-free contrib
 {% endif %}
