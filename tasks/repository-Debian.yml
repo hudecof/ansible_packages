@@ -1,12 +1,12 @@
 ---
 
 - name: "debian | remove sources.list"
-  file:
+  ansible.builtin.file:
     path: /etc/apt/sources.list
     state: absent
 
 - name: "debian | repository"
-  template:
+  ansible.builtin.template:
     src: repository/{{ repository_item.src }}
     dest: /etc/apt/sources.list.d/{{ repository_item.dest }}
     owner: root
@@ -18,7 +18,7 @@
   register: repository
 
 - name: "debian | update repository"
-  apt:
+  ansible.builtin.apt:
     update_cache: yes
     cache_valid_time: 1
   when: repository.changed

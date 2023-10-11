@@ -1,6 +1,6 @@
 ---
 - name: "debian | config"
-  template:
+  ansible.builtin.template:
     src: config/{{ config_item.src }}
     dest: /etc/apt/apt.conf.d/{{ config_item.dest }}
     owner: root

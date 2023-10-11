@@ -12,3 +12,5 @@ packages_pkgs:
   - {'name': 'python-apt', 'state': 'present'}
   - {'name': 'sudo', 'state': 'present'}
   - {'name': 'debian-archive-keyring', 'state': 'present'}
+
+packages_enabled: true

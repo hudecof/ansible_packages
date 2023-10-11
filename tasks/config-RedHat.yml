@@ -1,13 +1,13 @@
 ---
 - name: "config plugins (redhat)"
-  ini_file:
+  community.general.ini_file:
     dest: /etc/yum.conf
     section: main
     option: plugins
     value: 1
 
 - name: "config proxy (redhat)"
-  ini_file:
+  community.general.ini_file:
     dest: /etc/yum.conf
     section: main
     option: proxy
@@ -15,7 +15,7 @@
   when: not packages_proxy is none
 
 - name: "config proxy_username (redhat)"
-  ini_file:
+  community.general.ini_file:
     dest: /etc/yum.conf
     section: main
     option: proxy_username
@@ -23,7 +23,7 @@
   when: not packages_proxy_username is none
 
 - name: "config proxy_password (redhat)"
-  ini_file:
+  community.general.ini_file:
     dest: /etc/yum.conf
     section: main
     option: proxy_password

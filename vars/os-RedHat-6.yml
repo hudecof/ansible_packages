@@ -7,3 +7,5 @@ packages_pkgs:
 
 packages_epel_rpm:
   - https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+
+packages_enabled: true

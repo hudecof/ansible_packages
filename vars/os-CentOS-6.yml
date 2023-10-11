@@ -8,3 +8,5 @@ packages_pkgs:
 
 packages_epel_rpm:
   - epel-release
+
+packages_enabled: true

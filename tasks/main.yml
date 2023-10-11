@@ -2,32 +2,42 @@
 # tasks file for packages
 
 - name: "set os specific variables"
-  include_vars: "{{ item }}"
+  ansible.builtin.include_vars: "{{ item }}"
   with_first_found:
     - "os-{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml"
     - "os-{{ ansible_distribution }}-{{ ansible_distribution_version }}.yml"
     - "os-{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
     - "os-{{ ansible_distribution }}.yml"
-  tags:
-    - packages
-    - packages:config
-    - packages:repository
-    - packages:packages
+    - "os-default.yml"
+  tags: always
 
 - name: include config tasks
-  include: config-{{ ansible_os_family }}.yml
+  ansible.builtin.include_tasks:
+    file: config-{{ ansible_os_family }}.yml
+    apply:
+      tags:
+        - packages
+        - packages:config
   tags:
-    - packages
-    - packages:config
+    - always
+  when: packages_enabled
 
 - name: include repository tasks
-  include: repository-{{ ansible_os_family }}.yml
-  tags:
-    - packages
-    - packages:repository
+  ansible.builtin.include_tasks:
+    file: repository-{{ ansible_os_family }}.yml
+    apply:
+      tags:
+        - packages
+        - packages:repository
+  tags: always
+  when: packages_enabled
 
 - name: include packages tasks
-  include: packages-{{ ansible_os_family }}.yml
-  tags:
-    - packages
-    - packages:packages
+  ansible.builtin.include_tasks:
+    file: packages-{{ ansible_os_family }}.yml
+    apply:
+      tags:
+        - packages
+        - packages:packages
+  tags: always
+  when: packages_enabled

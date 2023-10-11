@@ -13,3 +13,6 @@ packages_pkgs:
   - {'name': 'python-apt', 'state': 'present'}
   - {'name': 'sudo', 'state': 'present'}
   - {'name': 'ubuntu-keyring', 'state': 'present'}
+
+
+packages_enabled: true
